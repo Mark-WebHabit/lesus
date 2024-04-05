@@ -1,0 +1,43 @@
+.overview-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.overview-container h2 {
+  text-align: center;
+  margin: 1em 0;
+  margin-bottom: 0;
+}
+.overview-wrapper {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
+.overview-card-container {
+  width: 51%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.card {
+  width: 40%;
+  max-height: 250px;
+  aspect-ratio: 4 / 4;
+  margin: 1em;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--green);
+}
+.overview-card-container .card:hover {
+  scale: 1.1;
+}
+
+.overview-card-container .card img {
+  width: 30%;
+}
+.overview-card-container .card p {
+  text-transform: uppercase;
+}

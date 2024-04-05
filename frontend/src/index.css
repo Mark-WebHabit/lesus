@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  --blue: #338fc2;
+  --white: #dfe6ec;
+  --fadedBlue: #338fc266;
+  --black: #2e2e2e;
+  --active: #8fbedc;
+  --green: #8febdc;
+  --blueish: rgba(51, 143, 194, 0.2);
+}
+
+html {
+  font-size: 16px;
+}
+
+* {
+  margin: 0%;
+  box-sizing: border-box;
+  padding: 0%;
+  transition: all 150ms;
+  font-family: "Istok Web", sans-serif;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}

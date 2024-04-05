@@ -1,0 +1,14 @@
+4/4/2024, 1:12:03 PM		status:500		end-point:/auth/register		origin:http://localhost:5000		error:verify must be called asynchronous if secret or public key is provided as a callback
+4/4/2024, 1:12:56 PM		status:500		end-point:/auth/register		origin:http://localhost:5000		error:verify must be called asynchronous if secret or public key is provided as a callback
+4/4/2024, 1:13:17 PM		status:500		end-point:/auth/register		origin:http://localhost:5000		error:verify must be called asynchronous if secret or public key is provided as a callback
+4/4/2024, 1:16:21 PM		status:201		end-point:/auth/register		origin:http://localhost:5000		error:Cannot set headers after they are sent to the client
+4/4/2024, 1:49:03 PM		status:201		end-point:/auth/register		origin:http://localhost:5000		error:Cannot set headers after they are sent to the client
+4/4/2024, 8:06:19 PM		status:500		end-point:/auth/code		origin:http://localhost:5000		error:Cannot read properties of undefined (reading 'create')
+4/4/2024, 9:21:49 PM		status:500		end-point:/auth/login		origin:http://localhost:5000		error:username is not defined
+4/5/2024, 2:20:10 AM		status:500		end-point:/auth		origin:http://localhost:5000		error:Cannot read properties of undefined (reading 'access_token')
+4/5/2024, 2:20:10 AM		status:500		end-point:/auth		origin:http://localhost:5000		error:Cannot read properties of undefined (reading 'access_token')
+4/5/2024, 2:20:13 AM		status:500		end-point:/auth		origin:http://localhost:5000		error:Cannot read properties of undefined (reading 'access_token')
+4/5/2024, 2:20:13 AM		status:500		end-point:/auth		origin:http://localhost:5000		error:Cannot read properties of undefined (reading 'access_token')
+4/5/2024, 4:12:41 PM		status:500		end-point:/auth/code		origin:http://localhost:5000		error:formattedContact is not defined
+4/5/2024, 4:13:06 PM		status:500		end-point:/auth/code		origin:http://localhost:5000		error:formattedContact is not defined
+4/5/2024, 4:13:38 PM		status:500		end-point:/auth/code		origin:http://localhost:5000		error:formattedContact is not defined

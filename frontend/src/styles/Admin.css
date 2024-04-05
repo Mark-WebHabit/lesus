@@ -1,0 +1,70 @@
+.admin-layout {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--white);
+  display: flex;
+}
+.admin-sidebar {
+  height: 100%;
+  width: 11%;
+  background: var(--blue);
+}
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+}
+.logo-container {
+  margin-bottom: 1em;
+}
+.logosvg {
+  width: 75px;
+  height: 75px;
+}
+.logo-container > p {
+  color: var(--white);
+  font-size: 1.3rem;
+}
+.navigation-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 0.3em;
+  cursor: pointer;
+  border-radius: 0.5em;
+}
+.nav svg {
+  min-width: 30px;
+  width: 20%;
+  margin-left: 0.4em;
+  fill: var(--white);
+}
+.nav span {
+  color: var(--white);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.nav:hover {
+  background-color: var(--active);
+}
+.nav.active {
+  background-color: var(--active);
+}
+.nav:hover svg,
+.nav:hover span {
+  fill: var(--black);
+  color: var(--black);
+}
+.nav.active svg,
+.nav.active span {
+  fill: var(--black);
+  color: var(--black);
+}
