@@ -25,6 +25,13 @@ const MainLayout = () => {
     }
   }, []);
 
+  // watch for user role
+  useEffect(() => {
+    if (user._id && user.role === "admin") {
+      navigate("/admin");
+    }
+  }, [user.role]);
+
   return (
     <div className="mainlayout-container">
       <MainHeader user={user} />

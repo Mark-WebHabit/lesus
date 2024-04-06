@@ -1,10 +1,29 @@
-import React from "react";
-import Highcharts from "highcharts";
+import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Highcharts, { fireEvent } from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
 import { customerEngagementData } from "../dummydatas/sales.js";
 import { customerEngagementChart } from "../config/chartOptions.js";
+import {
+  setEngagementChart,
+  setFilterUserlogs,
+} from "../app/features/userlogSlice.js";
 const CustomerEngagementChart = () => {
+  const [filter, setFilter] = useState(new Date().getFullYear());
+  const dispatch = useDispatch();
+  const engagementChart = useSelector(
+    (state) => state.userlogs.engagementChart
+  );
+
+  const handleChange = (e) => {
+    setFilter(e.target.value);
+  };
+
+  useEffect(() => {
+    dispatch(setFilterUserlogs(filter));
+  }, [filter]);
+
   return (
     <div className="customer-engagement-chart chart">
       <div className="filter">
@@ -14,13 +33,15 @@ const CustomerEngagementChart = () => {
           name="year"
           id=""
           min="2023"
-          max="2024"
+          max={new Date().getFullYear()}
           placeholder="year"
+          value={filter}
+          onChange={handleChange}
         />
       </div>
       <HighchartsReact
         highcharts={Highcharts}
-        options={customerEngagementChart(customerEngagementData)}
+        options={customerEngagementChart(engagementChart)}
       />
     </div>
   );

@@ -59,10 +59,10 @@ export function bestSellerSummaryOptions(arr) {
       type: "area",
     },
     title: {
-      text: "Best Selling Products",
+      text: "Best Selling Products This Month",
     },
     xAxis: {
-      categories: arr.map((item) => item.name),
+      categories: arr.map((item) => item.product_name),
     },
     yAxis: {
       title: {
@@ -71,7 +71,7 @@ export function bestSellerSummaryOptions(arr) {
     },
     series: [
       {
-        data: arr.map((item) => item.stocksSold),
+        data: arr.map((item) => item.quantity),
         color: {
           linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
           stops: [
@@ -115,7 +115,7 @@ export function customerEngagementChart(arr) {
     },
     yAxis: {
       title: {
-        text: "Stocks Sold",
+        text: "System Logs",
       },
     },
     series: [

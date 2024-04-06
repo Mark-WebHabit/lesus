@@ -12,3 +12,6 @@
 4/5/2024, 4:12:41 PM		status:500		end-point:/auth/code		origin:http://localhost:5000		error:formattedContact is not defined
 4/5/2024, 4:13:06 PM		status:500		end-point:/auth/code		origin:http://localhost:5000		error:formattedContact is not defined
 4/5/2024, 4:13:38 PM		status:500		end-point:/auth/code		origin:http://localhost:5000		error:formattedContact is not defined
+4/6/2024, 12:07:29 PM		status:500		end-point:/auth/logout/undefined		origin:http://localhost:5000		error:Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Users"
+4/6/2024, 12:08:05 PM		status:500		end-point:/auth/logout/undefined		origin:http://localhost:5000		error:Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Users"
+4/6/2024, 12:08:52 PM		status:500		end-point:/auth/logout/undefined		origin:http://localhost:5000		error:Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Users"

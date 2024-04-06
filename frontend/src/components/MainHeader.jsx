@@ -16,7 +16,6 @@ const MainHeader = ({ user }) => {
       navigate("/lesus");
     }
   };
-  console.log(user);
 
   return (
     <div className="user-header">
@@ -29,7 +28,7 @@ const MainHeader = ({ user }) => {
       <div className="navigation">
         <Link>Home</Link>
         <Link>Shop</Link>
-        <Link>Cart</Link>
+        {user?._id && <Link>Cart</Link>}
         {!user._id && <Link to={"/lesus"}>Login</Link>}
         {user?._id && (
           <div className="icon">

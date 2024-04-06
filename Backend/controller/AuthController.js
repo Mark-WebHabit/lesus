@@ -230,6 +230,9 @@ export const logout = asyncHandler(async (req, res) => {
   const accessToken = req.cookies?.access_token || null;
   const { userId } = req.params;
 
+  console.log(userId);
+  console.log(accessToken);
+
   if (!userId) {
     return res
       .status(401)

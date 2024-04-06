@@ -26,11 +26,24 @@
   background-color: var(--blue);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 0.3em;
 }
-
+.card .card-header select {
+  background: var(--white);
+  border: none;
+  font-size: 0.7rem;
+}
+.card .card-header select:focus {
+  outline: none;
+}
+.card .card-header select option {
+  border-radius: 0;
+  font-size: 0.7rem;
+}
 .card-header .title {
   color: var(--white);
+  font-size: 1rem;
   text-transform: uppercase;
 }
 .card-info {
