@@ -15,3 +15,15 @@
 4/6/2024, 12:07:29 PM		status:500		end-point:/auth/logout/undefined		origin:http://localhost:5000		error:Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Users"
 4/6/2024, 12:08:05 PM		status:500		end-point:/auth/logout/undefined		origin:http://localhost:5000		error:Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Users"
 4/6/2024, 12:08:52 PM		status:500		end-point:/auth/logout/undefined		origin:http://localhost:5000		error:Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Users"
+4/6/2024, 5:15:44 PM		status:500		end-point:/sales		origin:http://localhost:5000		error:Cannot access 'Sales' before initialization
+4/7/2024, 10:00:04 AM		status:500		end-point:/products/add		origin:http://localhost:5000		error:Products validation failed: colors.0.sizes.0: Cast to [Number] failed for value "[ { size: '40', stock: 1 } ]" (type string) at path "sizes.0" because of "CastError", colors.0.stock: Path `stock` is required.
+4/7/2024, 10:00:52 AM		status:500		end-point:/products/add		origin:http://localhost:5000		error:Products validation failed: colors.0.sizes.0: Cast to [Number] failed for value "[ { size: '40', stock: 1 } ]" (type string) at path "sizes.0" because of "CastError"
+4/7/2024, 10:01:53 AM		status:500		end-point:/products/add		origin:http://localhost:5000		error:Products validation failed: colors.0.sizes.0: Cast to [string] failed for value "[ { size: '40', stock: 1 } ]" (type string) at path "sizes.0" because of "CastError"
+4/7/2024, 10:03:56 AM		status:500		end-point:/products/add		origin:http://localhost:5000		error:Products validation failed: colors.0.sizes.0: Cast to [string] failed for value "[ { size: '40', stock: 1 } ]" (type string) at path "sizes.0" because of "CastError"
+4/7/2024, 10:05:29 AM		status:500		end-point:/products/add		origin:http://localhost:5000		error:Products validation failed: colors.0.sizes.0: Cast to [string] failed for value "[ { size: '40', stock: 1 } ]" (type string) at path "sizes.0" because of "CastError"
+4/7/2024, 10:37:11 AM		status:500		end-point:/products/undefined		origin:http://localhost:5000		error:Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Products"
+4/7/2024, 10:37:11 AM		status:500		end-point:/products/undefined		origin:http://localhost:5000		error:Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Products"
+4/9/2024, 10:02:17 AM		status:500		end-point:/products/product/pogi		origin:http://localhost:5000		error:modelNumber is not defined
+4/9/2024, 8:06:03 PM		status:500		end-point:/sales/walkin/order		origin:http://localhost:5000		error:res.status.json is not a function
+4/9/2024, 8:06:03 PM		status:500		end-point:/sales/walkin/order		origin:http://localhost:5000		error:res.status.json is not a function
+4/9/2024, 8:06:03 PM		status:500		end-point:/sales/walkin/order		origin:http://localhost:5000		error:res.status.json is not a function

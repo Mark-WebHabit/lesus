@@ -1,0 +1,218 @@
+.sell-product-container {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  backdrop-filter: blur(3px);
+  display: grid;
+  place-items: center;
+}
+
+.sell-product-wrapper {
+  height: 70%;
+  max-width: 1000px;
+  aspect-ratio: 4 / 2;
+  background-color: var(--white);
+  border-radius: 1em;
+  display: flex;
+}
+
+.sell-side {
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  padding: 1em 0;
+}
+.search-model-number {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  background-color: var(--white);
+  border: 1px solid var(--blue);
+  margin: 0.5em auto;
+}
+.search-model-number input {
+  flex: 1;
+  padding: 0.4em 0.8em;
+  border: none;
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.search-model-number input:focus {
+  outline: none;
+}
+.search-model-number img {
+  width: 25px;
+  cursor: pointer;
+}
+.sell-side h2 {
+  font-size: 1.2rem;
+  margin: 0.8em 0 0.4em 0;
+  text-align: center;
+  color: var(--black);
+}
+.order-sell {
+  margin: 0.5em auto;
+  width: 95%;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 0.3em 1em;
+  text-transform: uppercase;
+}
+
+.inputs {
+  width: 95%;
+  margin: 0.5em auto;
+  border: 1px solid var(--blue);
+}
+.inputs .color {
+  display: flex;
+  align-items: center;
+  padding-left: 0.4em;
+}
+.inputs .color label {
+  font-size: 1rem;
+  color: var(--black);
+  margin-right: 1em;
+}
+.inputs .color select {
+  flex: 1;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 0.3em 1em;
+}
+.size-title {
+  font-size: 0.8rem;
+  display: inline-block;
+  width: 95%;
+  margin: 0% auto;
+  margin-top: 0.5em;
+  font-weight: bold;
+  color: var(--black);
+}
+.sizes-selection {
+  width: 95%;
+  margin: 0.5em auto;
+  height: auto;
+  max-height: 150px;
+  overflow-y: scroll;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.sizes-selection .size {
+  padding: 0.1em 0.7em;
+  border: 1px solid var(--blue);
+  margin: 0.3em;
+  cursor: pointer;
+}
+
+.quantity-incrementor {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
+  border: 1px solid var(--blue);
+  margin: 0.5em auto;
+  margin-top: 2em;
+  padding-left: 1em;
+  position: relative;
+}
+
+.quantity {
+  flex: 1;
+  border: none;
+  background-color: transparent;
+  color: var(--black);
+}
+.quantity::placeholder {
+  color: var(--black);
+}
+.quantity:focus {
+  outline: none;
+}
+.quantity-incrementor img {
+  width: 25px;
+  background-color: var(--blue);
+  padding: 0.4em;
+}
+.stocks-lefts {
+  position: absolute;
+  top: -100%;
+  font-size: 0.8rem;
+  color: var(--black);
+  left: 0;
+}
+
+.button-add-order {
+  width: auto;
+  padding: 0.5em 1em;
+  margin: 1em auto;
+  border-radius: 0.5em;
+  background-color: var(--blue);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.order-summary {
+  flex: 1;
+  overflow-y: scroll;
+  border: 1px solid var(--blue);
+  border-radius: 1em;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 0.2em;
+}
+
+.order-summary table {
+  width: 100%;
+  max-height: 85%;
+  overflow-y: scroll;
+  border-collapse: collapse;
+}
+thead tr td {
+  border-bottom: 1px solid var(--blue);
+  padding: 0.5em 0;
+}
+.order-summary tbody tr:nth-child(odd) {
+  background: #f2f2f2;
+}
+tbody tr td {
+  padding: 0.4em 0;
+}
+tbody tr td img {
+  width: 15px;
+  height: 15px;
+}
+
+.order-summary .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2em;
+  margin-right: 1em;
+  margin-top: 1em;
+}
+.sub-total {
+  margin: 1em;
+}
+.order-summary .buttons p {
+  text-transform: uppercase;
+  color: white;
+
+  background-color: var(--blue);
+  padding: 0.3em 1em;
+  border-radius: 0.3em;
+  border: 2px solid var(--blue);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.order-summary .buttons p:hover {
+  color: var(--blue);
+  background: var(--white);
+}

@@ -15,6 +15,23 @@ const initialState = {
   ],
 };
 
+// asyn functions here
+export const fetchAllOrders = createAsyncThunk("/orders", async () => {
+  try {
+    const response = await instance.get("/orders");
+
+    return response.data;
+  } catch (error) {
+    if (error.response?.data) {
+      console.log(error.response.data);
+      throw new Error(error.response.data);
+    } else {
+      console.log(error.message);
+      throw new Error(error.message);
+    }
+  }
+});
+
 export const orderSlice = createSlice({
   name: "orders",
   initialState,
@@ -79,6 +96,15 @@ export const orderSlice = createSlice({
         { status: "cancelled", count: cancelledInPercent },
       ];
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchAllOrders.fulfilled, (state, action) => {
+        state.orders = action.payload.data;
+      })
+      .addCase(fetchAllOrders.rejected, (state, action) => {
+        console.log(action.error);
+      });
   },
 });
 export const { setTotalTransactions, setOrdersFilter, setPieChartData } =

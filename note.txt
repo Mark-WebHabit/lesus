@@ -1,1 +1,1 @@
-date format must be consistent:mm/dd/yyyy
+date format must be consistent:yyyy/mm/dd

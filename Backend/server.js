@@ -7,6 +7,7 @@ import cookieParser from "cookie-parser";
 import { fileURLToPath } from "url";
 
 // custom middleware file
+import { adminAuthorization } from "./middlewares/adminAuthorization.js";
 import { errorLogger } from "./middlewares/errorLogger.js";
 
 // config
@@ -14,6 +15,9 @@ import { corsOptions } from "./config/corsOptions.js";
 
 // routers
 import AuthRouter from "./routes/AuthRoutes.js";
+import ProductRoute from "./routes/ProductsRoutes.js";
+import SalesRoute from "./routes/SalesRoutes.js";
+import OrdersRoutes from "./routes/OrderRoutes.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -36,6 +40,11 @@ app.use(express.json({ extended: true }));
 
 // public route
 app.use("/auth", AuthRouter);
+
+// preotected
+app.use("/products", adminAuthorization, ProductRoute);
+app.use("/sales", adminAuthorization, SalesRoute);
+app.use("/orders", adminAuthorization, OrdersRoutes);
 
 // only during developemet
 // custom middleware to catch errors

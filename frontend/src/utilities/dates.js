@@ -69,9 +69,7 @@ export function getLastDayOfLastMonth() {
 }
 
 export function isDateInLastMonth(dateStr) {
-  const newdate = new Date(dateStr);
-  const valid = formatDateToDDMMYYYY(newdate);
-  const date = new Date(valid);
+  const date = new Date(dateStr);
   const firstDayLastMonth = new Date(
     getFirstDayOfLastMonth().split("/").reverse().join("-")
   );
@@ -229,3 +227,14 @@ export function getMonthNameFromDate(dateString) {
   const monthIndex = date.getMonth(); // getMonth() returns a zero-based index
   return monthNames[monthIndex];
 }
+
+export const replaceDashWithHypen = (dateStr) => {
+  //make sure the param si yyyy/mm/dd
+  // Parse the input datetime string
+  const dt = new Date(dateStr);
+
+  // Format the datetime as yyyy-mm-dd
+  const formattedDate = dt.toISOString().split("T")[0];
+
+  return formattedDate;
+};

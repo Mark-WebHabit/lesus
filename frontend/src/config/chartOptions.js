@@ -9,10 +9,12 @@ export function salesSummaryOptions(arr) {
       text: "Daily Sales Update",
     },
     xAxis: {
-      categories: arr.date,
+      categories: arr?.date,
       title: {
         text:
-          arr.date[0] == "January" ? "Month of this year" : "Days of this week",
+          arr?.date[0] == "January"
+            ? "Month of this year"
+            : "Days of this week",
       },
     },
     yAxis: {
@@ -28,7 +30,7 @@ export function salesSummaryOptions(arr) {
     series: [
       {
         name: "Sales",
-        data: arr.sales,
+        data: arr?.sales,
       },
     ],
 
@@ -62,7 +64,7 @@ export function bestSellerSummaryOptions(arr) {
       text: "Best Selling Products This Month",
     },
     xAxis: {
-      categories: arr.map((item) => item.product_name),
+      categories: arr.map((item) => item?.product_name),
     },
     yAxis: {
       title: {
@@ -71,7 +73,7 @@ export function bestSellerSummaryOptions(arr) {
     },
     series: [
       {
-        data: arr.map((item) => item.quantity),
+        data: arr.map((item) => item?.quantity),
         color: {
           linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
           stops: [
@@ -111,7 +113,7 @@ export function customerEngagementChart(arr) {
       text: "Customer Engagement Summary",
     },
     xAxis: {
-      categories: arr.map((item) => item.month),
+      categories: arr.map((item) => item?.month),
     },
     yAxis: {
       title: {
@@ -120,7 +122,7 @@ export function customerEngagementChart(arr) {
     },
     series: [
       {
-        data: arr.map((item) => item.engagements.length),
+        data: arr.map((item) => item?.engagements.length),
         color: {
           linearGradient: { x1: 0, x2: 0, y1: 0, y2: 1 },
           stops: [
@@ -185,8 +187,8 @@ export function orderSummary(arr) {
         name: "Orders",
         colorByPoint: true,
         data: arr.map((order) => ({
-          name: order.status,
-          y: order.count,
+          name: order?.status,
+          y: order?.count,
         })),
       },
     ],

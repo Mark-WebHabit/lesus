@@ -21,7 +21,7 @@
   flex-direction: column;
 }
 .card-header {
-  height: 20%;
+  /* height: 20%; */
   width: 100%;
   background-color: var(--blue);
   display: flex;
