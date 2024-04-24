@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import "../styles/AddModal.css";
 import LogoSvg from "../assets/Logo";
 import { addProduct, fetchAllProducts } from "../app/features/inventorySlice";
+import storage from "../config/firebase";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const AddProductModal = ({ handleToggleAddProductModal }) => {
   const [datas, setDatas] = useState({
@@ -14,7 +16,12 @@ const AddProductModal = ({ handleToggleAddProductModal }) => {
     images: [],
   });
   const [error, setError] = useState("");
+  const [images, setImages] = useState([])
+  const [img, setImg] = useState("") 
+  const [uploading, setUploading] = useState(false)
+  const [src, setSrc] = useState("")
   const dispatch = useDispatch();
+  const inputRef = useRef()
 
   const handleChange = (e) => {
     setError("");
@@ -22,7 +29,7 @@ const AddProductModal = ({ handleToggleAddProductModal }) => {
   };
 
   const handleSubmit = async () => {
-    const { productName, modelNo, color, size, price, images } = datas;
+    const { productName, modelNo, color, size, price } = datas;
     if (
       productName === "" ||
       size === "" ||
@@ -46,7 +53,7 @@ const AddProductModal = ({ handleToggleAddProductModal }) => {
         color: color.toLowerCase(),
         size,
         price,
-        images,
+        images: images || []
       })
     );
     await dispatch(fetchAllProducts());
@@ -58,29 +65,67 @@ const AddProductModal = ({ handleToggleAddProductModal }) => {
       price: "",
       images: [],
     });
+    setImages([])
     setError("");
     handleToggleAddProductModal();
   };
 
   // extra component
-  const ImageIndicator = ({ filename, event }) => {
+  const ImageIndicator = ({ url }) => {
     return (
       <div className="image-indicator">
-        <span>file.jpg</span>
+        <span onClick={() => setSrc(url)}>file.jpg</span>
         <img src="/images/x.png" alt="close" />
       </div>
     );
   };
 
+  const handleFileChange = (e) => {
+    const confirmation = confirm("Upload Image?");
+
+    if (!confirmation) return;
+
+    if (e.target.files[0]) {
+      setImg(e.target.files[0]);
+    }
+  }
+
+  useEffect(() => {
+    if(img){
+      async function uplaod () {
+        setUploading(true)
+
+          const storageRef = ref(storage, `images/${img.name}`);
+      try {
+        const snapshot = await uploadBytes(storageRef, img);
+        const imageUrl = await getDownloadURL(snapshot.ref);
+
+        if (imageUrl) {
+          setImages((prev) => [...prev, imageUrl])
+          setImg("")
+        }
+      } catch (error) {
+        console.log(error.message);
+      } finally {
+        setUploading(false);
+      }
+          
+        
+      }
+      uplaod()
+    }
+  },[img])
+
+  useEffect(() => {console.log(images);}, [images])
   return (
     <div className="add-modal-continaer">
       <div className="add-modal-wrapper">
         <div className="add-modal-flex">
           <div className="image-container">
-            <LogoSvg />
-            {/* <img src="" alt="" /> */}
-            <input type="file" name="" id="" accept="jpg, jpeg" />
-            <button className="upload">UPLOAD</button>
+           {src === ""  && <LogoSvg />}
+           {src !== "" && <img src={src} alt="" />}
+            <input type="file" name="" id="" accept="jpg, jpeg" ref={inputRef} onChange={handleFileChange}/>
+            <button className="upload" onClick={() => inputRef.current.click()}>{uploading ? "UPLOADING" : "UPLAOD"}</button>
           </div>
           <div className="add-product">
             <p className="error">{error}</p>
@@ -153,7 +198,9 @@ const AddProductModal = ({ handleToggleAddProductModal }) => {
             </div>
           </div>
         </div>
-        <div className="image-list"></div>
+        {images && images.length !== 0 && <div className="image-list">
+          {images.map((image, i) => <ImageIndicator key={i} url={image} />)}
+          </div>}
       </div>
     </div>
   );

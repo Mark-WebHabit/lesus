@@ -274,6 +274,8 @@ const SellProductModal = ({ setSellModal }) => {
         }
       });
     });
+
+    setSellModal(false)
   };
 
   useEffect(() => {
@@ -281,6 +283,7 @@ const SellProductModal = ({ setSellModal }) => {
       if (e.key === "Enter") {
         searchRef.current.click();
       }
+      
     }
 
     window.addEventListener("keypress", hitEnter);

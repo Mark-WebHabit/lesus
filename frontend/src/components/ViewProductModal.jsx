@@ -12,6 +12,7 @@ const ViewProductModal = ({ handleToggleViewProductModal, viewId }) => {
     if (viewId) {
       async function getProduct() {
         const response = await dispatch(getSingleProduct(viewId));
+        console.log(response);
         setData(response.payload.data);
       }
 
